@@ -528,42 +528,6 @@
       "turno": "24x24",
       "fecha_contratacion": "2025-10-17",
       "calidad_candidato": "Ideal"
-    },
-    {
-      "id": 45,
-      "nombre": "Samuel",
-      "apellido": "Salas",
-      "ubicacion": "Feria del mole ",
-      "experiencia": "experta ",
-      "licencias": "Defensa personal, sin porte de arma ",
-      "estado": "Activo",
-      "turno": "24x24",
-      "fecha_contratacion": "2025-10-17",
-      "calidad_candidato": "Ideal"
-    },
-    {
-      "id": 46,
-      "nombre": "Samuel",
-      "apellido": "Salas",
-      "ubicacion": "Feria del mole ",
-      "experiencia": "experta ",
-      "licencias": "Defensa personal, sin porte de arma ",
-      "estado": "Activo",
-      "turno": "24x24",
-      "fecha_contratacion": "2025-10-17",
-      "calidad_candidato": "Ideal"
-    },
-    {
-      "id": 47,
-      "nombre": "Carlos",
-      "apellido": "Rivero ",
-      "ubicacion": "Coyoacán",
-      "experiencia": "Sin experiencia ",
-      "licencias": "ninguna",
-      "estado": "Activo",
-      "turno": "24x24",
-      "fecha_contratacion": "2025-10-17",
-      "calidad_candidato": "Principiante"
     }
   ]
 }
