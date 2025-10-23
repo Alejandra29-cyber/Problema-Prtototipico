@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Gestión Empleados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .login-card {
+            max-width: 400px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.3.2/jsencrypt.min.js"></script>
+</head>
+
+<body>
+    <div class="card login-card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Iniciar Sesión (RSA)</h2>
+
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }} <button type="button" class="btn-close" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
+
+            <form id="loginForm" method="POST">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password_plain" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password_plain" name="password_plain" required>
+                </div>
+                <input type="hidden" id="password_encrypted" name="password_encrypted">
+                <div class="d-grid"><button type="submit" class="btn btn-primary">Entrar</button></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const publicKeyPem = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmIUl2TRIl+BZpP2SLmhO
+Gn9ciWS9G/5hG/G7PU5E/VEZyJ57PEqQCXysH0PjNtaAnbTQzfwYtzf72eUErHbe
+GDyEvH9g6LCdY3FaYTc+vfTd+xoeIgotv1appEY9tnkoM9zsH4FK8xQNu7nGuJ9S
+BuSqwGliikS69yHcWiFcgWeC1DD0eLp8RrRiQocGZyxW3HPJC3D3EwiuNa1JuYtL
+jmxlk3X9HRj5RZtO8rVhbpIRAQ3kBtZDNpeme9b65avy4/vEc4f6iIX7j58cwPhO
+1yYElELnYrZirFId2zAKvUE5CG7CpPSQxfnr/LcRPaBEDzHXu969n6CJFIN9JR18
+XwIDAQAB
+-----END PUBLIC KEY-----`;
+
+        const form = document.getElementById('loginForm');
+        const passwordPlainInput = document.getElementById('password_plain');
+        const passwordEncryptedInput = document.getElementById('password_encrypted');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita envío normal
+            const plainPassword = passwordPlainInput.value;
+            const encrypt = new JSEncrypt();
+            encrypt.setPublicKey(publicKeyPem);
+            const encryptedPassword = encrypt.encrypt(plainPassword); // Cifra
+
+            if (encryptedPassword) {
+                passwordEncryptedInput.value = encryptedPassword; // Pone cifrada en campo oculto
+                passwordPlainInput.value = ''; // Borra la original
+                form.submit();
+            } else {
+                alert("Error al cifrar la contraseña.");
+            }
+        });
+    </script>
+</body>
+
+</html>
