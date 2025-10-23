@@ -26,7 +26,7 @@
 <body>
     <div class="card login-card shadow-sm">
         <div class="card-body">
-            <h2 class="card-title text-center mb-4">Iniciar Sesión (RSA)</h2>
+            <h2 class="card-title text-center mb-4">Iniciar Sesión con RSA</h2>
 
             {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
             {% for category, message in messages %}
@@ -68,15 +68,15 @@ XwIDAQAB
         const passwordEncryptedInput = document.getElementById('password_encrypted');
 
         form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita envío normal
+            event.preventDefault(); 
             const plainPassword = passwordPlainInput.value;
             const encrypt = new JSEncrypt();
             encrypt.setPublicKey(publicKeyPem);
-            const encryptedPassword = encrypt.encrypt(plainPassword); // Cifra
+            const encryptedPassword = encrypt.encrypt(plainPassword); 
 
             if (encryptedPassword) {
-                passwordEncryptedInput.value = encryptedPassword; // Pone cifrada en campo oculto
-                passwordPlainInput.value = ''; // Borra la original
+                passwordEncryptedInput.value = encryptedPassword; 
+                passwordPlainInput.value = ''; 
                 form.submit();
             } else {
                 alert("Error al cifrar la contraseña.");
