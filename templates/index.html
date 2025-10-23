@@ -31,6 +31,12 @@
                 + Agregar Nuevo Empleado
             </a>
         </div>
+        <div class="d-flex justify-content-end mb-3">
+    <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary">
+        Cerrar Sesión ({{ current_user.username }})
+    </a>
+
+</div>
 
         <div class="card shadow-sm">
             <div class="card-body">
