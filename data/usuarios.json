@@ -3,12 +3,7 @@
     {
       "id": 1,
       "username": "admin",
-      "password_hash": "scrypt:32768:8:1$ntOjAQ0Jdyd4bI08$6f235e8b65d7fd63feb56379b84d091b810d52da82be04ff1efb5f648699833f5f63fad63e6d93675377b1310ef759056c76334cfbb7a67643279675870e1792"
-    },
-    {
-      "id": 2,
-      "username": "ale",
-      "password_hash": "scrypt:32768:8:1$ntOjAQ0Jdyd4bI08$6f235e8b65d7fd63feb56379b84d091b810d52da82be04ff1efb5f648699833f5f63fad63e6d93675377b1310ef759056c76334cfbb7a67643279675870e1792"
+      "password_hash": "scrypt:32768:8:1$w2JX4AY3mLq6An2a$9bc41089ab1d4875025fb41d2be41bf04c4a89912a087d6ecb50d9e01b8d27f2d0c8fa4336abc7833e0570dbc9542f045d8cc8f9b972dccfcd669ef1fffb9e19"
     }
   ]
 }

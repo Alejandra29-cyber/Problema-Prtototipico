@@ -20,7 +20,7 @@
       "apellido": "Dimas",
       "ubicacion": "Isabel Catolica",
       "experiencia": "Intermedia",
-      "licencias": "Sin poerte de arma",
+      "licencias": "Sin perte de arma",
       "estado": "Activo",
       "turno": "24x24",
       "calidad_candidato": "Bueno"
@@ -528,6 +528,18 @@
       "turno": "24x24",
       "fecha_contratacion": "2025-10-17",
       "calidad_candidato": "Ideal"
+    },
+    {
+      "id": 45,
+      "nombre": "Angie Cristel",
+      "apellido": "Notario Muñoz",
+      "ubicacion": "Edomex",
+      "experiencia": "Basica",
+      "licencias": "Sin porte de arma",
+      "estado": "Activo",
+      "turno": "24x24",
+      "fecha_contratacion": "2005-10-10",
+      "calidad_candidato": "Regular"
     }
   ]
 }
