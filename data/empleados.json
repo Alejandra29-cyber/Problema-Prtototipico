@@ -540,6 +540,18 @@
       "turno": "24x24",
       "fecha_contratacion": "2005-10-10",
       "calidad_candidato": "Regular"
+    },
+    {
+      "id": 46,
+      "nombre": "Vanessa ",
+      "apellido": "Chavez",
+      "ubicacion": "Edomex",
+      "experiencia": "Experta",
+      "licencias": "Sin porte de arma",
+      "estado": "Activo",
+      "turno": "12x12",
+      "fecha_contratacion": "2003-10-10",
+      "calidad_candidato": "Regular"
     }
   ]
 }
